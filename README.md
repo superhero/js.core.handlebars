@@ -4,7 +4,7 @@ Licence: [MIT](https://opensource.org/licenses/MIT)
 
 ---
 
-[![npm version](https://badge.fury.io/js/%40superhero%2Fcore.handlebars.svg)](https://badge.fury.io/js/%40superhero%2Fcore)
+[![npm version](https://badge.fury.io/js/%40superhero%2Fcore.handlebars.svg)](https://badge.fury.io/js/%40superhero%2Fcore.handlebars)
 
 This is an addon module to the [superhero/core](https://github.com/superhero/js.core) module. This addon will add a `handlebars` view option.
 
