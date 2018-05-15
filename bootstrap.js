@@ -54,7 +54,7 @@ module.exports = (options, config_core) =>
       template  = options.partials[partial],
       source    = fs.readFileSync(`${config.path}/${template}.hbs`, 'utf-8')
 
-      handlebars.registerPartial(template, source)
+      handlebars.registerPartial(partial, source)
     }
   }
 
