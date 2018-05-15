@@ -64,7 +64,7 @@ module.exports =
 {
   bootstrap:
   {
-    template:
+    handlebars:
     {
       partials:
       {
@@ -75,7 +75,7 @@ module.exports =
   routes:
   [
     {
-      view      : 'template',
+      view      : 'handlebars',
       template  : 'view/foobar',
       endpoint  : 'controller/foobar',
       policy    :
@@ -96,7 +96,7 @@ config    = module.exports.config = require('./config'),
 core      = require('@superhero/core'),
 bootstrap =
 [
-  require('@superhero/core.handlebars/bootstrap').bind(null, config)
+  require('@superhero/core.handlebars/bootstrap').bind(null, config.bootstrap.handlebars)
 ]
 
 core.bootstrap(bootstrap).then((core) =>
