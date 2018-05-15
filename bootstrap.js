@@ -1,4 +1,5 @@
 const
+fs          = require('fs'),
 handlebars  = require('handlebars'),
 config      = require('./config'),
 log         = require('@superhero/debug').log
@@ -50,10 +51,10 @@ module.exports = (options, config_core) =>
       log(`Adding partial:"${partial}"`)
 
       const
-      template = options.partials[partial],
-      source = fs.readFileSync(`${config.path}/${template}.hbs`, 'utf-8')
+      template  = options.partials[partial],
+      source    = fs.readFileSync(`${config.path}/${template}.hbs`, 'utf-8')
 
-      handlebars.registerPartial(name, source)
+      handlebars.registerPartial(template, source)
     }
   }
 
