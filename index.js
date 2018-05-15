@@ -23,7 +23,7 @@ module.exports = class
 
   async composeFile(filename, context)
   {
-    return await readFile(`${path}/${filename}.hbs`, 'utf-8').then((source) =>
+    return await readFile(`${config.path}/${filename}.hbs`, 'utf-8').then((source) =>
     {
       const
       template = this.handlebars.compile(source),
