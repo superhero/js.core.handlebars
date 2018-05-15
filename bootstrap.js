@@ -1,9 +1,8 @@
 const
 handlebars  = require('handlebars'),
 config      = require('./config'),
-log         = require('@superhero/debug').log
-
-addHelper(name, filename)
+log         = require('@superhero/debug').log,
+addHelper   = (name, filename) =>
 {
   let helper
   switch(typeof filename)
