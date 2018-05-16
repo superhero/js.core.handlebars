@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">42.86% </span>
+        <span class="strong">92.86% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/14</span>
+        <span class='fraction'>13/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">42.86% </span>
+        <span class="strong">92.86% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/14</span>
+        <span class='fraction'>13/14</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -91,28 +91,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,25 +129,25 @@ module.exports = class
     return require('handlebars')
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  as</span>ync compose(vm, route)
+  async compose(vm, route)
   {
-    const template = <span class="cstat-no" title="statement not covered" >vm.template || route.template</span>
+    const template = vm.template || <span class="branch-1 cbranch-no" title="branch not covered" >route.template</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if(!template)</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if(!template)
 <span class="cstat-no" title="statement not covered" >      throw new Error('view can not be rendered, no template defined')</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return await this.composeFile(template, vm.body)</span>
+    return await this.composeFile(template, vm.body)
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  as</span>ync composeFile(filename, context)
+  async composeFile(filename, context)
   {
-<span class="cstat-no" title="statement not covered" >    return await readFile(`${config.path}/${filename}.hbs`, 'utf-8'<span class="fstat-no" title="function not covered" >).</span>then((source) =&gt;</span>
+    return await readFile(`${config.path}/${filename}.hbs`, 'utf-8').then((source) =&gt;
     {
       const
-      template = <span class="cstat-no" title="statement not covered" >this.handlebars.compile(source),</span>
-      composed = <span class="cstat-no" title="statement not covered" >template(context)</span>
+      template = this.handlebars.compile(source),
+      composed = template(context)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return composed</span>
+      return composed
     })
   }
 }
@@ -157,7 +157,7 @@ module.exports = class
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 16 2018 14:40:49 GMT+0200 (CEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 16 2018 15:51:40 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../prettify.js"></script>

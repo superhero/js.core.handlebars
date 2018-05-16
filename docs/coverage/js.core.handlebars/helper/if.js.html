@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for js.core.handlebars/helper/calculate.js</title>
+    <title>Code coverage report for js.core.handlebars/helper/if.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">All files</a> / <a href="index.html">js.core.handlebars/helper</a> calculate.js
+      <a href="../../index.html">All files</a> / <a href="index.html">js.core.handlebars/helper</a> if.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>12/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">72.5% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>5/5</span>
+        <span class='fraction'>29/40</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>12/12</span>
       </div>
     </div>
     <p class="quiet">
@@ -61,35 +61,41 @@
 <a name='L13'></a><a href='#L13'>13</a>
 <a name='L14'></a><a href='#L14'>14</a>
 <a name='L15'></a><a href='#L15'>15</a>
-<a name='L16'></a><a href='#L16'>16</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = (a, operator, b) =&gt;
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = function(a, operator, b, options)
 {
-  a = parseFloat(a)
-  b = parseFloat(b)
+  options = options || <span class="branch-1 cbranch-no" title="branch not covered" >operator</span>
 &nbsp;
-  switch(operator)
+  switch (operator)
   {
-    case '+': return a + b
-    case '-': return a - b
-    case '*': return a * b
-    case '/': return a / b
-    case '%': return a % b
+    case '==' : case 'eq' : return (a == b) ? options.fn(this) : <span class="branch-1 cbranch-no" title="branch not covered" >options.inverse(this)</span>
+    case '&lt;'  : case 'lt' : return (a &lt;  b) ? options.fn(this) : <span class="branch-1 cbranch-no" title="branch not covered" >options.inverse(this)</span>
+    case '&lt;=' : case 'lte': return (a &lt;= b) ? options.fn(this) : <span class="branch-1 cbranch-no" title="branch not covered" >options.inverse(this)</span>
+    case '&gt;'  : case 'gt' : return (a &gt;  b) ? options.fn(this) : <span class="branch-1 cbranch-no" title="branch not covered" >options.inverse(this)</span>
+    case '&gt;=' : case 'gte': return (a &gt;= b) ? options.fn(this) : <span class="branch-1 cbranch-no" title="branch not covered" >options.inverse(this)</span>
+    case '&amp;&amp;' : case 'and': return (a &amp;&amp; b) ? options.fn(this) : <span class="branch-1 cbranch-no" title="branch not covered" >options.inverse(this)</span>
+    case '||' : case 'or' : return (a || <span class="branch-1 cbranch-no" title="branch not covered" >b)</span> ? options.fn(this) : <span class="branch-1 cbranch-no" title="branch not covered" >options.inverse(this)</span>
+    case 'typeof' : return  (typeof a == b) ? options.fn(this) : <span class="branch-1 cbranch-no" title="branch not covered" >options.inverse(this)</span>
+    default       : return  (a)             ? options.fn(this) : <span class="branch-1 cbranch-no" title="branch not covered" >options.inverse(this)</span>
   }
-  return ''
 }
 &nbsp;</pre></td></tr>
 </table></pre>
