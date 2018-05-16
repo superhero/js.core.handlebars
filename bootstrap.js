@@ -87,7 +87,7 @@ module.exports = (options, config_core) =>
         else if(filepath)
         {
           log(`Adding custom helper:"${name}" from:"${filepath}"`)
-          addHelper(name, filepath)
+          addHelper(name, `${config.path}/${filepath}`)
         }
         else
         {
