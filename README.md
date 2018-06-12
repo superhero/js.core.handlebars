@@ -92,7 +92,7 @@ module.exports =
 
 ```js
 const
-config    = module.exports.config = require('./config'),
+config    = require('./config'),
 core      = require('@superhero/core'),
 bootstrap =
 [
