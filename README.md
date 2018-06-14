@@ -183,6 +183,7 @@ module.exports =
         escDoubleQuote  : true,
         escSingelQuote  : true,
         if              : true,
+        nif             : true,
         jsonStringify   : true,
         stripTags       : true,
         toFixed         : true,
