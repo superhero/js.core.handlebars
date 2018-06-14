@@ -1,4 +1,4 @@
-# Core
+# Core › Handlebars
 
 Licence: [MIT](https://opensource.org/licenses/MIT)
 
