@@ -183,12 +183,12 @@ module.exports =
         escDoubleQuote  : true,
         escSingelQuote  : true,
         if              : true,
-        nif             : true,
         jsonStringify   : true,
         stripTags       : true,
         toFixed         : true,
         toLowerCase     : true,
         toUpperCase     : true,
+        unless          : true,
 
         // You can add a custom helper by specify it's name and the path to the
         // exported function
