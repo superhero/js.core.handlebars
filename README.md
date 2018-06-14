@@ -188,6 +188,7 @@ module.exports =
         toFixed         : true,
         toLowerCase     : true,
         toUpperCase     : true,
+        unless          : true,
 
         // You can add a custom helper by specify it's name and the path to the
         // exported function
