@@ -21,9 +21,10 @@ module.exports = class
     return await this.composeFile(template, vm.body)
   }
 
-  async composeFile(filename, context)
+  async composeFile(filename, context, sufix = '.hbs')
   {
-    return await readFile(`${config.path}/${filename}.hbs`, 'utf-8').then((source) =>
+    const fullName = `${config.path}/${filename}${sufix}`
+    return await readFile(fullName, 'utf-8').then((source) =>
     {
       const
       template = this.handlebars.compile(source),
