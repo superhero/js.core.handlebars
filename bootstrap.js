@@ -29,18 +29,19 @@ function addHelper(name, filename)
   handlebars.registerHelper(name, helper)
 }
 
-module.exports = (options, config_core) =>
+module.exports = async function(options)
 {
   log(`Bootstrap handlebars`)
 
-  config_core.view.handlebars = __dirname
+  const config_src = await this.locator.load('config')
+  config_src.view.handlebars = __dirname
 
   log(`Added the view "handlebars" to the list of accepted view servants`)
 
   if('path' in options)
   {
-    log(`Set the public directory to: ${options.path}"`)
     config.path = options.path
+    log(`Set the public directory to: ${config.path}"`)
   }
 
   if('partials' in options)

@@ -24,15 +24,20 @@ describe('view/handlebars', () =>
 
     before(async () =>
     {
-      await require('./bootstrap')(
+      const
+      Core = require('@superhero/core'),
+      core = new Core({ view:{} })
+
+      await core.bootstrap(
       {
-        path      : __dirname,
-        partials  : { layout : 'test/layout' },
-        helpers   : { if : true }
-      },
-      {
-        view : {}
+        [__dirname] :
+        {
+          path      : __dirname,
+          partials  : { layout : 'test/layout' },
+          helpers   : { if : true }
+        }
       })
+
       html = await view.compose(
       {
         template  : 'test/template',

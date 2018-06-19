@@ -93,11 +93,12 @@ module.exports =
 ```js
 const
 config    = require('./config'),
-core      = require('@superhero/core'),
+Core      = require('@superhero/core'),
+core      = new Core(config),
 bootstrap =
-[
-  require('@superhero/core.handlebars/bootstrap').bind(null, config.bootstrap.handlebars)
-]
+{
+  '@superhero/core.handlebars':config.bootstrap.handlebars
+}
 
 core.bootstrap(bootstrap).then((core) =>
   core.server('http', config.routes).listen(80))

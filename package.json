@@ -1,6 +1,6 @@
 {
   "name": "@superhero/core.handlebars",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Addon module to add a handlebars template view to the @superhero/core module",
   "repository": "git@github.com:superhero/js.core.handlebars.git",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "prepublishOnly": "npm run-script generate-doc-coverage && npm run-script generate-doc-tests",
     "generate-doc-coverage": "nyc report --reporter=html --report-dir=./docs/coverage",
     "generate-doc-tests": "mocha './{,!(node_modules)/**}/*.test.js' --reporter mochawesome --reporter-options reportDir=docs/tests,reportFilename=index,showHooks=always",
-    "test": "nyc mocha './{,!(node_modules)/**}/*.test.js'"
+    "test": "syntax-check && nyc mocha './{,!(node_modules)/**}/*.test.js'"
   },
   "dependencies": {
     "@superhero/debug": "1.1.4",
@@ -22,6 +22,8 @@
     "dateformat": "3.0.2"
   },
   "devDependencies": {
+    "@superhero/core": "0.15.3",
+    "@superhero/syntax-check": "0.0.1",
     "mocha": "5.1.0",
     "mochawesome": "3.0.2",
     "chai": "4.1.2",
