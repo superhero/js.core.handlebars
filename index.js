@@ -18,13 +18,12 @@ module.exports = class
     if(!template)
       throw new Error('view can not be rendered, no template defined')
 
-    return await this.composeFile(template, vm.body)
+    return await this.composeFile(`${config.path}/${template}.hbs`, vm.body)
   }
 
-  async composeFile(filename, context, sufix = '.hbs')
+  async composeFile(filename, context)
   {
-    const fullName = `${config.path}/${filename}${sufix}`
-    return await readFile(fullName, 'utf-8').then((source) =>
+    return await readFile(filename, 'utf-8').then((source) =>
     {
       const
       template = this.handlebars.compile(source),
