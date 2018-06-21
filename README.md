@@ -30,7 +30,7 @@ This is an addon module to the [superhero/core](https://github.com/superhero/js.
 ```
 App
 ├── controller
-│   ├── foobar.js
+│   └── foobar.js
 ├── view
 │   ├── foobar.hbs
 │   └── layout.hbs
