@@ -156,7 +156,9 @@
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
 <a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -263,6 +265,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -299,20 +303,22 @@ function addHelper(name, filename)
 &nbsp;
 module.exports = async function(options)
 {
+  options = options || {}
+&nbsp;
   log(`Bootstrap handlebars`)
 &nbsp;
   const config_src = await this.locator.load('config')
   config_src.view.handlebars = __dirname
 &nbsp;
-  log(`Added the view "handlebars" to the list of accepted view servants`)
+  <span class="missing-if-branch" title="else path not taken" >E</span>log(`Added the view "handlebars" to the list of accepted view servants`)
 &nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if('path' in options)
+  if('path' in options)
   {
     config.path = options.path
     log(`Set the public directory to: ${config.path}"`)
-  }
+  <span class="missing-if-branch" title="else path not taken" >E</span>}
 &nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if('partials' in options)
+  if('partials' in options)
   {
     log(`Adding partials`)
     for(let partial in options.partials)
@@ -325,54 +331,54 @@ module.exports = async function(options)
 &nbsp;
       handlebars.registerPartial(partial, source)
     }
-  }
+  <span class="missing-if-branch" title="else path not taken" >E</span>}
 &nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if('helpers' in options)
-  {
+  if('helpers' in options)
+  {<span class="missing-if-branch" title="if path not taken" >I</span>
     log(`Adding helpers`)
-    <span class="missing-if-branch" title="if path not taken" >I</span>if(Array.isArray(options.helpers))
-    {
-<span class="cstat-no" title="statement not covered" >      log(`Adding helpers by Array`)</span>
-<span class="cstat-no" title="statement not covered" >      for(const name of options.helpers)</span>
-      {
-<span class="cstat-no" title="statement not covered" >        log(`Adding helper:"${name}"`)</span>
-<span class="cstat-no" title="statement not covered" >        addHelper(name)</span>
+    if<span class="cstat-no" title="statement not covered" >(Array.isArray(options.helpers)</span>)
+    {<span class="cstat-no" title="statement not covered" ></span>
+      log(`Adding helpers by Array`)
+      fo<span class="cstat-no" title="statement not covered" >r(const name of options.helpers</span>)
+      {<span class="cstat-no" title="statement not covered" ></span>
+        log(`Adding helper:"${name}"`)
+        addHelper(name)
       }
-    }
+    }<span class="missing-if-branch" title="else path not taken" >E</span>
 &nbsp;
-    else <span class="missing-if-branch" title="else path not taken" >E</span>if(typeof options.helpers === 'object')
+    else if(typeof options.helpers === 'object')
     {
       log(`Adding helpers by object`)
       for(const name in options.helpers)
       {
         const filepath = options.helpers[name]
-&nbsp;
+<span class="missing-if-branch" title="else path not taken" >E</span>
         // if true, then assume attempting to add a library helper
-        <span class="missing-if-branch" title="else path not taken" >E</span>if(filepath === true)
+        if(filepath === true)
         {
           log(`Adding helper:"${name}"`)
-          addHelper(name)
+          add<span class="cstat-no" title="statement not covered" >Helper(name)</span>
         }
-        else <span class="cstat-no" title="statement not covered" >if(filepath)</span>
-        {
-<span class="cstat-no" title="statement not covered" >          log(`Adding custom helper:"${name}" from:"${filepath}"`)</span>
-<span class="cstat-no" title="statement not covered" >          addHelper(name, `${config.path}/${filepath}`)</span>
+        el<span class="cstat-no" title="statement not covered" >se if(filepath)</span>
+        {<span class="cstat-no" title="statement not covered" ></span>
+          log(`Adding custom helper:"${name}" from:"${filepath}"`)
+          addHelper(name, `${config.path}/${filepath}`)
         }
-        else
+        el<span class="cstat-no" title="statement not covered" >se</span>
         {
-<span class="cstat-no" title="statement not covered" >          log(`Ignoring helper:"${name}"`)</span>
+          log(`Ignoring helper:"${name}"`)
         }
       }
     }
 &nbsp;
     else
-    {
-      const
-      type  = <span class="cstat-no" title="statement not covered" >typeof options.helpers,</span>
-      msg   = <span class="cstat-no" title="statement not covered" >`Invalid format for "config.handlebars.helpers". `</span>
-            + `Expected "object" or "Array", found:"${type}"`
-<span class="cstat-no" title="statement not covered" >      error = new TypeError(msg)</span>
-<span class="cstat-no" title="statement not covered" >      throw error</span>
+    {<span class="cstat-no" title="statement not covered" ></span>
+      const<span class="cstat-no" title="statement not covered" ></span>
+      type  = typeof options.helpers,
+<span class="cstat-no" title="statement not covered" >      msg   = `Invalid format for</span> "config.handlebars.helpers". `
+<span class="cstat-no" title="statement not covered" >            + `Exp</span>ected "object" or "Array", found:"${type}"`
+      error = new TypeError(msg)
+      throw error
     }
   }
 }
@@ -382,7 +388,7 @@ module.exports = async function(options)
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jun 20 2018 18:42:55 GMT+0200 (CEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jun 21 2018 16:14:48 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../prettify.js"></script>

@@ -31,6 +31,8 @@ function addHelper(name, filename)
 
 module.exports = async function(options)
 {
+  options = options || {}
+
   log(`Bootstrap handlebars`)
 
   const config_src = await this.locator.load('config')
