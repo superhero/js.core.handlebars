@@ -186,6 +186,7 @@ module.exports =
         'escSingelQuote'  : true,
         'if'              : true,
         'jsonStringify'   : true,
+        'math'            : true,
         'stripTags'       : true,
         'switch'          : true,
         'toFixed'         : true,
