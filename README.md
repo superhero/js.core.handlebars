@@ -64,7 +64,7 @@ module.exports =
 {
   bootstrap:
   {
-    handlebars:
+    '@superhero/core.handlebars':
     {
       partials:
       {
@@ -92,16 +92,11 @@ module.exports =
 
 ```js
 const
-config    = require('./config'),
-Core      = require('@superhero/core'),
-core      = new Core(config),
-bootstrap =
-{
-  '@superhero/core.handlebars':config.bootstrap.handlebars
-}
+config  = require('./config'),
+Core    = require('@superhero/core'),
+core    = new Core(config)
 
-core.bootstrap(bootstrap).then((core) =>
-  core.server('http', config.routes).listen(80))
+core.bootstrap().then(() => core.server('http', config.routes).listen(80))
 ```
 
 #### `controller/foobar.js`
