@@ -1,7 +1,7 @@
 const
 fs          = require('fs'),
 handlebars  = require('handlebars'),
-config      = require('./config'),
+config      = require('./config_module'),
 log         = require('@superhero/debug').log
 
 function addHelper(name, filename)
@@ -34,11 +34,6 @@ module.exports = async function(options)
   options = options || {}
 
   log(`Bootstrap handlebars`)
-
-  const config_src = await this.locator.load('config')
-  config_src.view.handlebars = __dirname
-
-  log(`Added the view "handlebars" to the list of accepted view servants`)
 
   if('path' in options)
   {

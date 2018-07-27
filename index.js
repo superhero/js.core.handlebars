@@ -1,7 +1,7 @@
 const
 fs        = require('fs'),
 util      = require('util'),
-config    = require('./config'),
+config    = require('./config_module'),
 readFile  = util.promisify(fs.readFile)
 
 module.exports = class

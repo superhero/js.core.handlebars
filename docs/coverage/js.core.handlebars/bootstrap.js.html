@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66% </span>
+        <span class="strong">64.58% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>33/50</span>
+        <span class='fraction'>31/48</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">41.18% </span>
+        <span class="strong">42.11% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>7/17</span>
+        <span class='fraction'>8/19</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66% </span>
+        <span class="strong">64.58% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>33/50</span>
+        <span class='fraction'>31/48</span>
       </div>
     </div>
     <p class="quiet">
@@ -153,12 +153,7 @@
 <a name='L105'></a><a href='#L105'>105</a>
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -191,9 +186,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -265,15 +257,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const
 fs          = require('fs'),
 handlebars  = require('handlebars'),
-config      = require('./config'),
+config      = require('./config_module'),
 log         = require('@superhero/debug').log
 &nbsp;
 function addHelper(name, filename)
@@ -303,22 +293,17 @@ function addHelper(name, filename)
 &nbsp;
 module.exports = async function(options)
 {
-  options = options || {}
+  options = options || <span class="branch-1 cbranch-no" title="branch not covered" >{}</span>
 &nbsp;
   log(`Bootstrap handlebars`)
 &nbsp;
-  const config_src = await this.locator.load('config')
-  config_src.view.handlebars = __dirname
-&nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>log(`Added the view "handlebars" to the list of accepted view servants`)
-&nbsp;
-  if('path' in options)
+  <span class="missing-if-branch" title="else path not taken" >E</span>if('path' in options)
   {
     config.path = options.path
     log(`Set the public directory to: ${config.path}"`)
-  <span class="missing-if-branch" title="else path not taken" >E</span>}
+  }
 &nbsp;
-  if('partials' in options)
+  <span class="missing-if-branch" title="else path not taken" >E</span>if('partials' in options)
   {
     log(`Adding partials`)
     for(let partial in options.partials)
@@ -331,54 +316,54 @@ module.exports = async function(options)
 &nbsp;
       handlebars.registerPartial(partial, source)
     }
-  <span class="missing-if-branch" title="else path not taken" >E</span>}
+  }
 &nbsp;
-  if('helpers' in options)
-  {<span class="missing-if-branch" title="if path not taken" >I</span>
+  <span class="missing-if-branch" title="else path not taken" >E</span>if('helpers' in options)
+  {
     log(`Adding helpers`)
-    if<span class="cstat-no" title="statement not covered" >(Array.isArray(options.helpers)</span>)
-    {<span class="cstat-no" title="statement not covered" ></span>
-      log(`Adding helpers by Array`)
-      fo<span class="cstat-no" title="statement not covered" >r(const name of options.helpers</span>)
-      {<span class="cstat-no" title="statement not covered" ></span>
-        log(`Adding helper:"${name}"`)
-        addHelper(name)
+    <span class="missing-if-branch" title="if path not taken" >I</span>if(Array.isArray(options.helpers))
+    {
+<span class="cstat-no" title="statement not covered" >      log(`Adding helpers by Array`)</span>
+<span class="cstat-no" title="statement not covered" >      for(const name of options.helpers)</span>
+      {
+<span class="cstat-no" title="statement not covered" >        log(`Adding helper:"${name}"`)</span>
+<span class="cstat-no" title="statement not covered" >        addHelper(name)</span>
       }
-    }<span class="missing-if-branch" title="else path not taken" >E</span>
+    }
 &nbsp;
-    else if(typeof options.helpers === 'object')
+    else <span class="missing-if-branch" title="else path not taken" >E</span>if(typeof options.helpers === 'object')
     {
       log(`Adding helpers by object`)
       for(const name in options.helpers)
       {
         const filepath = options.helpers[name]
-<span class="missing-if-branch" title="else path not taken" >E</span>
+&nbsp;
         // if true, then assume attempting to add a library helper
-        if(filepath === true)
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(filepath === true)
         {
           log(`Adding helper:"${name}"`)
-          add<span class="cstat-no" title="statement not covered" >Helper(name)</span>
+          addHelper(name)
         }
-        el<span class="cstat-no" title="statement not covered" >se if(filepath)</span>
-        {<span class="cstat-no" title="statement not covered" ></span>
-          log(`Adding custom helper:"${name}" from:"${filepath}"`)
-          addHelper(name, `${config.path}/${filepath}`)
-        }
-        el<span class="cstat-no" title="statement not covered" >se</span>
+        else <span class="cstat-no" title="statement not covered" >if(filepath)</span>
         {
-          log(`Ignoring helper:"${name}"`)
+<span class="cstat-no" title="statement not covered" >          log(`Adding custom helper:"${name}" from:"${filepath}"`)</span>
+<span class="cstat-no" title="statement not covered" >          addHelper(name, `${config.path}/${filepath}`)</span>
+        }
+        else
+        {
+<span class="cstat-no" title="statement not covered" >          log(`Ignoring helper:"${name}"`)</span>
         }
       }
     }
 &nbsp;
     else
-    {<span class="cstat-no" title="statement not covered" ></span>
-      const<span class="cstat-no" title="statement not covered" ></span>
-      type  = typeof options.helpers,
-<span class="cstat-no" title="statement not covered" >      msg   = `Invalid format for</span> "config.handlebars.helpers". `
-<span class="cstat-no" title="statement not covered" >            + `Exp</span>ected "object" or "Array", found:"${type}"`
-      error = new TypeError(msg)
-      throw error
+    {
+      const
+      type  = <span class="cstat-no" title="statement not covered" >typeof options.helpers,</span>
+      msg   = <span class="cstat-no" title="statement not covered" >`Invalid format for "config.handlebars.helpers". `</span>
+            + `Expected "object" or "Array", found:"${type}"`
+<span class="cstat-no" title="statement not covered" >      error = new TypeError(msg)</span>
+<span class="cstat-no" title="statement not covered" >      throw error</span>
     }
   }
 }
@@ -388,7 +373,7 @@ module.exports = async function(options)
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 27 2018 16:40:03 GMT+0200 (CEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jul 27 2018 18:08:16 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../prettify.js"></script>
