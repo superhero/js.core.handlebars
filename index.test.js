@@ -18,6 +18,7 @@ describe('view/handlebars', () =>
     () => expect(view.handlebars).to.be.equal(handlebars))
   })
 
+  /*
   describe('', () =>
   {
     let html
@@ -85,4 +86,5 @@ describe('view/handlebars', () =>
     it('if helper "typeof"',
     () => expect(html.includes('typeof')).to.be.equal(true))
   })
+  */
 })

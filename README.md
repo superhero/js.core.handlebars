@@ -173,23 +173,26 @@ module.exports =
       {
         // The library has a few defined core helpers that can be activated
         // and used by through a truthful flag
-        calculate       : true,
-        concat          : true,
-        dateformat      : true,
-        escDoubleQuote  : true,
-        escSingelQuote  : true,
-        if              : true,
-        jsonStringify   : true,
-        stripTags       : true,
-        toFixed         : true,
-        toLowerCase     : true,
-        toUpperCase     : true,
-        unless          : true,
+        'calculate'       : true,
+        'case'            : true,
+        'concat'          : true,
+        'dateformat'      : true,
+        'escDoubleQuote'  : true,
+        'escSingelQuote'  : true,
+        'if'              : true,
+        'jsonStringify'   : true,
+        'math'            : true,
+        'stripTags'       : true,
+        'switch'          : true,
+        'toFixed'         : true,
+        'toLowerCase'     : true,
+        'toUpperCase'     : true,
+        'unless'          : true,
 
         // You can add a custom helper by specify it's name and the path to the
         // exported function
-        customHelper    : 'path-to-helper'
-      }
+        'customHelper'    : 'path-to-helper'
+      },
       partials:
       {
         // You can register partials to be loaded and used through-out the

@@ -6,19 +6,25 @@ readFile  = util.promisify(fs.readFile)
 
 module.exports = class
 {
-  get handlebars()
+  constructor(stream)
   {
-    return require('handlebars')
+    this.out        = stream
+    this.handlebars = require('handlebars')
   }
 
-  async compose(vm, route)
+  async write(vm, route)
   {
     const template = vm.template || route.template
 
     if(!template)
       throw new Error('view can not be rendered, no template defined')
 
-    return await this.composeFile(`${config.path}/${template}.hbs`, vm.body)
+    const
+    path = `${config.path}/${template}.hbs`,
+    body = await this.composeFile(path, vm.body)
+
+    this.out.writeHead(vm.status || 200, vm.headers)
+    this.out.end(body)
   }
 
   async composeFile(filename, context)
