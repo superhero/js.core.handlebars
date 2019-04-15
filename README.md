@@ -67,16 +67,23 @@ module.exports =
       layout  : 'view/layout'
     }
   },
-  routes:
-  [
+  http:
+  {
+    server:
     {
-      url       : '/',
-      method    : 'get',
-      view      : 'view/handlebars',
-      template  : 'view/foobar',
-      endpoint  : 'api/foobar'
+      routes:
+      {
+        'create-calculation':
+        {
+          url       : '/',
+          method    : 'get',
+          view      : 'view/handlebars',
+          template  : 'view/foobar',
+          endpoint  : 'api/foobar'
+        }
+      }
     }
-  ]
+  }
 }
 ```
 
@@ -89,6 +96,7 @@ coreFactory = new CoreFactory,
 core        = coreFactory.create()
 
 core.add('api')
+core.add('@superhero/core.handlebars')
 core.add('http/server')
 
 core.load()

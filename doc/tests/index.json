@@ -5,9 +5,9 @@
     "passes": 23,
     "pending": 0,
     "failures": 0,
-    "start": "2019-04-15T14:16:40.852Z",
-    "end": "2019-04-15T14:16:40.894Z",
-    "duration": 42,
+    "start": "2019-04-15T14:20:59.525Z",
+    "end": "2019-04-15T14:20:59.565Z",
+    "duration": 40,
     "testsRegistered": 23,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "fe41b50d-34a6-421e-bfb2-befda2afa99c",
+    "uuid": "6a21ca49-9720-4a80-b27b-55c6fc8b7cda",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,7 +28,7 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "dc26d98e-768b-44a5-ac9b-887035c8c8eb",
+        "uuid": "55ebf743-56de-4c76-8255-862cb6909763",
         "title": "view/template/helper/calculate",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/calculate.test.js",
         "file": "/helper/calculate.test.js",
@@ -44,7 +44,7 @@
             "code": "calculate = require('./calculate')",
             "err": {},
             "isRoot": false,
-            "uuid": "5d25bf78-4c68-49d9-a871-2be411710e06",
+            "uuid": "456809ef-3fba-42c8-9fd6-6c8249ae90f4",
             "isHook": true,
             "skipped": false
           }
@@ -55,7 +55,7 @@
             "title": "1 + 1 = 2",
             "fullTitle": "view/template/helper/calculate 1 + 1 = 2",
             "timedOut": false,
-            "duration": 1,
+            "duration": 0,
             "state": "passed",
             "speed": "fast",
             "pass": true,
@@ -64,7 +64,7 @@
             "code": "expect(calculate(1, '+', 1)).to.be.equal(2)",
             "err": {},
             "isRoot": false,
-            "uuid": "36e3c303-2956-4a33-9f66-e2f30bc28bf3",
+            "uuid": "1e18926c-afad-4613-8fd1-e629d0d73e8f",
             "isHook": false,
             "skipped": false
           },
@@ -81,7 +81,7 @@
             "code": "expect(calculate(4, '-', 2)).to.be.equal(2)",
             "err": {},
             "isRoot": false,
-            "uuid": "6ccaa5f3-aefc-4c9c-8d72-beb67d6a94e4",
+            "uuid": "b013584d-9ec2-43d1-aaa8-bc969e1e7afd",
             "isHook": false,
             "skipped": false
           },
@@ -98,7 +98,7 @@
             "code": "expect(calculate(3, '*', 3)).to.be.equal(9)",
             "err": {},
             "isRoot": false,
-            "uuid": "d84c5da3-3994-4a34-b4e8-544e2d8561a6",
+            "uuid": "079ea88a-9b0f-4167-9885-d5a964188358",
             "isHook": false,
             "skipped": false
           },
@@ -115,7 +115,7 @@
             "code": "expect(calculate(9, '/', 3)).to.be.equal(3)",
             "err": {},
             "isRoot": false,
-            "uuid": "144fe977-8c23-4e52-b3b1-362552e17731",
+            "uuid": "614a1aa9-8f2e-4de0-9b6b-df578419b091",
             "isHook": false,
             "skipped": false
           },
@@ -132,7 +132,7 @@
             "code": "expect(calculate(5, '%', 3)).to.be.equal(2)",
             "err": {},
             "isRoot": false,
-            "uuid": "e2938368-a74a-4c6f-861f-d9fe93cff2fa",
+            "uuid": "b27a1cad-8102-4d96-ae6c-489879b519f5",
             "isHook": false,
             "skipped": false
           },
@@ -149,30 +149,30 @@
             "code": "expect(calculate(1, '', 1)).to.be.equal('')",
             "err": {},
             "isRoot": false,
-            "uuid": "ecaf92cb-c76f-4f92-80fa-3bd1915275ad",
+            "uuid": "f5b1b96c-260c-4be6-a93e-860097f357f3",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "36e3c303-2956-4a33-9f66-e2f30bc28bf3",
-          "6ccaa5f3-aefc-4c9c-8d72-beb67d6a94e4",
-          "d84c5da3-3994-4a34-b4e8-544e2d8561a6",
-          "144fe977-8c23-4e52-b3b1-362552e17731",
-          "e2938368-a74a-4c6f-861f-d9fe93cff2fa",
-          "ecaf92cb-c76f-4f92-80fa-3bd1915275ad"
+          "1e18926c-afad-4613-8fd1-e629d0d73e8f",
+          "b013584d-9ec2-43d1-aaa8-bc969e1e7afd",
+          "079ea88a-9b0f-4167-9885-d5a964188358",
+          "614a1aa9-8f2e-4de0-9b6b-df578419b091",
+          "b27a1cad-8102-4d96-ae6c-489879b519f5",
+          "f5b1b96c-260c-4be6-a93e-860097f357f3"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 1,
+        "duration": 0,
         "root": false,
         "rootEmpty": false,
         "_timeout": 2000
       },
       {
-        "uuid": "97e48b41-5641-475a-b42b-08f3b05a219d",
+        "uuid": "a54d0518-59e9-4609-bb08-5f86058b8c37",
         "title": "view/template/helper/concat",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/concat.test.js",
         "file": "/helper/concat.test.js",
@@ -188,7 +188,7 @@
             "code": "concat = require('./concat')",
             "err": {},
             "isRoot": false,
-            "uuid": "bdc726c7-0e69-4c04-8268-541c2a0f329c",
+            "uuid": "187359f2-758b-4a19-9cdc-3c63327beb66",
             "isHook": true,
             "skipped": false
           }
@@ -208,7 +208,7 @@
             "code": "expect(concat('foo','bar','baz')).to.be.equal('foobarbaz')",
             "err": {},
             "isRoot": false,
-            "uuid": "6a90f939-8968-4c00-873a-c1993aeb08c9",
+            "uuid": "9209ec2c-c7cf-40b1-9eac-477615e32a43",
             "isHook": false,
             "skipped": false
           },
@@ -225,15 +225,15 @@
             "code": "expect(concat('foo', undefined, {}, 'bar')).to.be.equal('foobar')",
             "err": {},
             "isRoot": false,
-            "uuid": "c2c7c549-b387-472a-9c33-67c7e6a72d94",
+            "uuid": "3eb5c9e7-2c97-4f8c-84a8-25b99612b1bc",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "6a90f939-8968-4c00-873a-c1993aeb08c9",
-          "c2c7c549-b387-472a-9c33-67c7e6a72d94"
+          "9209ec2c-c7cf-40b1-9eac-477615e32a43",
+          "3eb5c9e7-2c97-4f8c-84a8-25b99612b1bc"
         ],
         "failures": [],
         "pending": [],
@@ -244,7 +244,7 @@
         "_timeout": 2000
       },
       {
-        "uuid": "c7306b44-3398-46c2-aceb-881aba487a47",
+        "uuid": "8d535466-21ed-4cd4-8105-19e49e788fba",
         "title": "view/template/helper/dateformat",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/dateformat.test.js",
         "file": "/helper/dateformat.test.js",
@@ -260,7 +260,7 @@
             "code": "dateformat = require('./dateformat')",
             "err": {},
             "isRoot": false,
-            "uuid": "fea41b4a-d9fb-4dd7-923e-f795d482645e",
+            "uuid": "a84449f1-8a39-40ff-9520-68c115f03110",
             "isHook": true,
             "skipped": false
           }
@@ -271,7 +271,7 @@
             "title": "should return a formated date string",
             "fullTitle": "view/template/helper/dateformat should return a formated date string",
             "timedOut": false,
-            "duration": 3,
+            "duration": 2,
             "state": "passed",
             "speed": "fast",
             "pass": true,
@@ -280,25 +280,25 @@
             "code": "expect(dateformat(new Date(1524493378898), 'yyyy')).to.be.equal('2018')",
             "err": {},
             "isRoot": false,
-            "uuid": "c150da95-716f-46b7-93a9-c8fda4728c6d",
+            "uuid": "a0bfc4b2-b6ad-4cb5-b3d8-13171e41f16e",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "c150da95-716f-46b7-93a9-c8fda4728c6d"
+          "a0bfc4b2-b6ad-4cb5-b3d8-13171e41f16e"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 3,
+        "duration": 2,
         "root": false,
         "rootEmpty": false,
         "_timeout": 2000
       },
       {
-        "uuid": "b21ebb1d-bcb3-4760-91f4-6f1f41ba5b2a",
+        "uuid": "9536d90e-092d-4fe4-a00f-4e18b40812c2",
         "title": "view/template/helper/escDoubleQuote",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/escDoubleQuote.test.js",
         "file": "/helper/escDoubleQuote.test.js",
@@ -307,14 +307,14 @@
             "title": "\"before all\" hook",
             "fullTitle": "view/template/helper/escDoubleQuote \"before all\" hook",
             "timedOut": false,
-            "duration": 0,
+            "duration": 1,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "escDoubleQuote = require('./escDoubleQuote')",
             "err": {},
             "isRoot": false,
-            "uuid": "d389729e-2253-4e9d-8517-2ac1cc5c9029",
+            "uuid": "879ddf42-dfdc-44d6-9f89-c2ce6f417cda",
             "isHook": true,
             "skipped": false
           }
@@ -325,7 +325,7 @@
             "title": "should return a string with escaped double quotes",
             "fullTitle": "view/template/helper/escDoubleQuote should return a string with escaped double quotes",
             "timedOut": false,
-            "duration": 1,
+            "duration": 0,
             "state": "passed",
             "speed": "fast",
             "pass": true,
@@ -334,25 +334,25 @@
             "code": "expect(escDoubleQuote('foo \"bar\"')).to.be.equal('foo \\\\\"bar\\\\\"')",
             "err": {},
             "isRoot": false,
-            "uuid": "2e8fee7b-7aea-4d11-a213-0b021123a125",
+            "uuid": "b773fd74-2764-4766-8819-242d3c04e9bb",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "2e8fee7b-7aea-4d11-a213-0b021123a125"
+          "b773fd74-2764-4766-8819-242d3c04e9bb"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 1,
+        "duration": 0,
         "root": false,
         "rootEmpty": false,
         "_timeout": 2000
       },
       {
-        "uuid": "7dbc6796-867b-41b6-a4d7-b0bdf2179b91",
+        "uuid": "12d20a20-b14b-43bb-a12b-cd2c489ba04a",
         "title": "view/template/helper/escSingelQuote",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/escSingelQuote.test.js",
         "file": "/helper/escSingelQuote.test.js",
@@ -368,7 +368,7 @@
             "code": "escSingelQuote = require('./escSingelQuote')",
             "err": {},
             "isRoot": false,
-            "uuid": "ef7d69a2-844a-4df3-8a9c-57dad2f8230a",
+            "uuid": "33fa9570-0c25-41f3-b6eb-43f9789b369c",
             "isHook": true,
             "skipped": false
           }
@@ -388,14 +388,14 @@
             "code": "expect(escSingelQuote(\"foo 'bar'\")).to.be.equal(\"foo \\\\'bar\\\\'\")",
             "err": {},
             "isRoot": false,
-            "uuid": "dd0bd51c-81dd-4355-9e85-40b6279e7a79",
+            "uuid": "de24bb1b-6e49-4e86-9ea8-92b5d45af0b4",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "dd0bd51c-81dd-4355-9e85-40b6279e7a79"
+          "de24bb1b-6e49-4e86-9ea8-92b5d45af0b4"
         ],
         "failures": [],
         "pending": [],
@@ -406,7 +406,7 @@
         "_timeout": 2000
       },
       {
-        "uuid": "ecfb8e10-9cdf-4ddd-b072-0538ed90c50c",
+        "uuid": "f25c216e-49fe-40cd-9920-70af3c1e27da",
         "title": "view/template/helper/jsonStringify",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/jsonStringify.test.js",
         "file": "/helper/jsonStringify.test.js",
@@ -422,7 +422,7 @@
             "code": "jsonStringify = require('./jsonStringify')",
             "err": {},
             "isRoot": false,
-            "uuid": "2dbe6d4e-3872-4731-9e83-69ad1cbeb398",
+            "uuid": "40e1233d-e011-432e-a196-1bf6bce7c70e",
             "isHook": true,
             "skipped": false
           }
@@ -442,14 +442,14 @@
             "code": "expect(jsonStringify({foo:'bar'})).to.be.equal('{\"foo\":\"bar\"}')",
             "err": {},
             "isRoot": false,
-            "uuid": "5ccb2245-d836-419f-8d82-f202b8afc97d",
+            "uuid": "7cb1d309-720a-41bf-a0f8-5e18373bc970",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "5ccb2245-d836-419f-8d82-f202b8afc97d"
+          "7cb1d309-720a-41bf-a0f8-5e18373bc970"
         ],
         "failures": [],
         "pending": [],
@@ -460,7 +460,7 @@
         "_timeout": 2000
       },
       {
-        "uuid": "762eab1f-28d0-4535-a387-d05838e5c886",
+        "uuid": "72a3685f-f4b8-447a-b945-53c43625530f",
         "title": "view/template/helper/stripTags",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/stripTags.test.js",
         "file": "/helper/stripTags.test.js",
@@ -476,7 +476,7 @@
             "code": "stripTags = require('./stripTags')",
             "err": {},
             "isRoot": false,
-            "uuid": "a14b4d70-b961-41cb-b69f-8a3115f79e0f",
+            "uuid": "a48df7d8-ed54-45d3-a9dd-85cd30826cea",
             "isHook": true,
             "skipped": false
           }
@@ -496,7 +496,7 @@
             "code": "expect(stripTags('<p>foobar</p>')).to.be.equal('foobar')",
             "err": {},
             "isRoot": false,
-            "uuid": "16e170e8-3f9c-4700-9c10-28dffd697570",
+            "uuid": "72919ac2-5e6b-44f9-8761-35eee4f18826",
             "isHook": false,
             "skipped": false
           },
@@ -513,15 +513,15 @@
             "code": "expect(stripTags(5)).to.be.equal(5)",
             "err": {},
             "isRoot": false,
-            "uuid": "fe9aec97-f570-478b-a0d3-9afed3070dbb",
+            "uuid": "21750215-796d-4490-bb03-5ef10714c335",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "16e170e8-3f9c-4700-9c10-28dffd697570",
-          "fe9aec97-f570-478b-a0d3-9afed3070dbb"
+          "72919ac2-5e6b-44f9-8761-35eee4f18826",
+          "21750215-796d-4490-bb03-5ef10714c335"
         ],
         "failures": [],
         "pending": [],
@@ -532,7 +532,7 @@
         "_timeout": 2000
       },
       {
-        "uuid": "ff17dd75-ff35-4ba8-926d-60343edfd7ab",
+        "uuid": "ff00e279-ad49-49d7-90c3-5bc5b99530f9",
         "title": "view/template/helper/toFixed",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/toFixed.test.js",
         "file": "/helper/toFixed.test.js",
@@ -548,7 +548,7 @@
             "code": "toFixed = require('./toFixed')",
             "err": {},
             "isRoot": false,
-            "uuid": "1587b81a-43e9-4fad-a3ae-dbbda32eb76f",
+            "uuid": "f03c8ccf-387d-4e33-b88d-6ab8a012c98c",
             "isHook": true,
             "skipped": false
           }
@@ -559,7 +559,7 @@
             "title": "should return a padded number",
             "fullTitle": "view/template/helper/toFixed should return a padded number",
             "timedOut": false,
-            "duration": 1,
+            "duration": 0,
             "state": "passed",
             "speed": "fast",
             "pass": true,
@@ -568,7 +568,7 @@
             "code": "expect(toFixed(5, 2)).to.be.equal('5.00')",
             "err": {},
             "isRoot": false,
-            "uuid": "b5e3acda-ae4b-4655-a864-acaed7fe10fe",
+            "uuid": "5db6cb20-918f-414d-b5ff-b4e31866782e",
             "isHook": false,
             "skipped": false
           },
@@ -585,7 +585,7 @@
             "code": "expect(toFixed(null, 2)).to.be.equal('0.00')",
             "err": {},
             "isRoot": false,
-            "uuid": "b2e38253-625a-475f-948b-1b3f685cc5e6",
+            "uuid": "b80d11ea-feef-4f98-b346-aa94004408e6",
             "isHook": false,
             "skipped": false
           },
@@ -602,7 +602,7 @@
             "code": "expect(toFixed(undefined, 2)).to.be.equal('NaN')",
             "err": {},
             "isRoot": false,
-            "uuid": "787e97ac-ee00-44f1-9973-23a2a3e735dd",
+            "uuid": "db490c2b-8c22-44d7-90c4-3dea10ebe072",
             "isHook": false,
             "skipped": false
           },
@@ -619,7 +619,7 @@
             "code": "expect(toFixed(-5, 2)).to.be.equal('-5.00')",
             "err": {},
             "isRoot": false,
-            "uuid": "d7146a76-a8c6-4f79-b442-f55389ee27b3",
+            "uuid": "2e724c4d-d008-4432-b7b9-64550c777d2b",
             "isHook": false,
             "skipped": false
           },
@@ -636,7 +636,7 @@
             "code": "expect(toFixed('5', 2)).to.be.equal('5.00')",
             "err": {},
             "isRoot": false,
-            "uuid": "591ff99d-84b0-496b-b16f-ed2813591d20",
+            "uuid": "5487e32c-76e4-4ba7-a739-23b11ac25d29",
             "isHook": false,
             "skipped": false
           },
@@ -653,30 +653,30 @@
             "code": "expect(toFixed('foobar', 2)).to.be.equal('NaN')",
             "err": {},
             "isRoot": false,
-            "uuid": "c948b48e-49ba-41b5-b677-bfbe861f81d0",
+            "uuid": "8f04369d-c173-4c65-9ae0-dde854d04711",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "b5e3acda-ae4b-4655-a864-acaed7fe10fe",
-          "b2e38253-625a-475f-948b-1b3f685cc5e6",
-          "787e97ac-ee00-44f1-9973-23a2a3e735dd",
-          "d7146a76-a8c6-4f79-b442-f55389ee27b3",
-          "591ff99d-84b0-496b-b16f-ed2813591d20",
-          "c948b48e-49ba-41b5-b677-bfbe861f81d0"
+          "5db6cb20-918f-414d-b5ff-b4e31866782e",
+          "b80d11ea-feef-4f98-b346-aa94004408e6",
+          "db490c2b-8c22-44d7-90c4-3dea10ebe072",
+          "2e724c4d-d008-4432-b7b9-64550c777d2b",
+          "5487e32c-76e4-4ba7-a739-23b11ac25d29",
+          "8f04369d-c173-4c65-9ae0-dde854d04711"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 1,
+        "duration": 0,
         "root": false,
         "rootEmpty": false,
         "_timeout": 2000
       },
       {
-        "uuid": "0830a2d4-bdfa-4c33-89ae-de315dbcc976",
+        "uuid": "e354c2c3-460f-4496-8261-e2036a738d1c",
         "title": "view/template/helper/toLowerCase",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/toLowerCase.test.js",
         "file": "/helper/toLowerCase.test.js",
@@ -692,7 +692,7 @@
             "code": "toLowerCase = require('./toLowerCase')",
             "err": {},
             "isRoot": false,
-            "uuid": "9fa78f0d-453f-4e04-9257-c7a0202e0fa0",
+            "uuid": "6099569e-0c6a-4f7a-baed-c50ae46d4b9d",
             "isHook": true,
             "skipped": false
           }
@@ -712,14 +712,14 @@
             "code": "expect(toLowerCase('FooBar')).to.be.equal('foobar')",
             "err": {},
             "isRoot": false,
-            "uuid": "06af7bb5-1e64-478b-8781-c28340c33ffe",
+            "uuid": "7f9333bc-eb73-4830-9eec-1e13a76fffd5",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "06af7bb5-1e64-478b-8781-c28340c33ffe"
+          "7f9333bc-eb73-4830-9eec-1e13a76fffd5"
         ],
         "failures": [],
         "pending": [],
@@ -730,7 +730,7 @@
         "_timeout": 2000
       },
       {
-        "uuid": "75438082-18fc-42c0-9858-a39d6b463325",
+        "uuid": "4cf1590c-6b73-45a2-a68a-db16e5151dba",
         "title": "view/template/helper/toUpperCase",
         "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/helper/toUpperCase.test.js",
         "file": "/helper/toUpperCase.test.js",
@@ -746,7 +746,7 @@
             "code": "toUpperCase = require('./toUpperCase')",
             "err": {},
             "isRoot": false,
-            "uuid": "3d76be77-c940-486e-9c73-e1ad8270b610",
+            "uuid": "830cbfbc-76fa-4a55-a519-75033444b711",
             "isHook": true,
             "skipped": false
           }
@@ -766,14 +766,14 @@
             "code": "expect(toUpperCase('Foobar')).to.be.equal('FOOBAR')",
             "err": {},
             "isRoot": false,
-            "uuid": "d830b7a3-b979-4e73-bec9-9e0e7af39e00",
+            "uuid": "fa665eb1-52b4-464a-b257-6c1ef6916b9f",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "d830b7a3-b979-4e73-bec9-9e0e7af39e00"
+          "fa665eb1-52b4-464a-b257-6c1ef6916b9f"
         ],
         "failures": [],
         "pending": [],
@@ -784,23 +784,23 @@
         "_timeout": 2000
       },
       {
-        "uuid": "15c5490d-8f1f-498b-808d-ca3503268c9b",
+        "uuid": "e3343bf1-807e-4cd6-9419-ef5c0bb194c3",
         "title": "view/handlebars",
-        "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/test/index.test.js",
-        "file": "/test/index.test.js",
+        "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/test/core.test.js",
+        "file": "/test/core.test.js",
         "beforeHooks": [
           {
             "title": "\"before all\" hook",
             "fullTitle": "view/handlebars \"before all\" hook",
             "timedOut": false,
-            "duration": 22,
+            "duration": 21,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "const\nCoreFactory = require('@superhero/core/factory'),\ncoreFactory = new CoreFactory\ncore = coreFactory.create()\ncore.add('@superhero/core.handlebars', __dirname + '/..')\ncore.load()\ncore.locate('bootstrap').bootstrap().then(done)",
             "err": {},
             "isRoot": false,
-            "uuid": "2ef3861a-02d9-42ae-a758-64e115a9a9ae",
+            "uuid": "98bc4008-677d-420e-b81d-34ace48ca69b",
             "isHook": true,
             "skipped": false
           }
@@ -809,10 +809,10 @@
         "tests": [],
         "suites": [
           {
-            "uuid": "4b0eae41-c3c5-4c45-bf79-796173078469",
+            "uuid": "ef81afb7-1fbc-4350-a10d-eb0a30cef830",
             "title": "static get handlebars",
-            "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/test/index.test.js",
-            "file": "/test/index.test.js",
+            "fullFile": "/home/erik/Projects/@superhero/js.core.handlebars/test/core.test.js",
+            "file": "/test/core.test.js",
             "beforeHooks": [],
             "afterHooks": [],
             "tests": [
@@ -829,14 +829,14 @@
                 "code": "const view = core.locate('view/handlebars')\nexpect(view.handlebars).to.be.equal(handlebars)",
                 "err": {},
                 "isRoot": false,
-                "uuid": "c76d9874-4017-4947-9520-faaf5f3e4f4c",
+                "uuid": "58f4c6cb-0eda-4155-8bb5-4ad16454cea6",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "c76d9874-4017-4947-9520-faaf5f3e4f4c"
+              "58f4c6cb-0eda-4155-8bb5-4ad16454cea6"
             ],
             "failures": [],
             "pending": [],
