@@ -4,18 +4,30 @@ describe('view/handlebars', () =>
   handlebars  = require('handlebars'),
   expect      = require('chai').expect
 
-  let View, view
+  let core
 
-  before(() =>
+  before((done) =>
   {
-    View = require('.')
-    view = new View
+    const
+    CoreFactory = require('@superhero/core/factory'),
+    coreFactory = new CoreFactory
+
+    core = coreFactory.create()
+
+    core.add('@superhero/core.handlebars', __dirname + '/..')
+
+    core.load()
+
+    core.locate('bootstrap').bootstrap().then(done)
   })
 
   describe('static get handlebars', () =>
   {
-    it('should return the handlebars instance',
-    () => expect(view.handlebars).to.be.equal(handlebars))
+    it('should return the handlebars instance', () =>
+    {
+      const view = core.locate('view/handlebars')
+      expect(view.handlebars).to.be.equal(handlebars)
+    })
   })
 
   /*

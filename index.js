@@ -1,30 +1,34 @@
 const
 fs        = require('fs'),
 util      = require('util'),
-config    = require('./config_module'),
 readFile  = util.promisify(fs.readFile)
 
-module.exports = class
+class CoreHandlebars
 {
-  constructor(stream)
+  constructor(dirname, handlebars)
   {
-    this.out        = stream
-    this.handlebars = require('handlebars')
+    this.dirname    = dirname
+    this.handlebars = handlebars
   }
 
-  async write(vm, route)
+  async write(output, viewModel, route)
   {
-    const template = vm.template || route.template
+    const template = viewModel.template || route.template
 
     if(!template)
-      throw new Error('view can not be rendered, no template defined')
+    {
+      const msg = 'view can not be rendered, no template defined'
+      throw new Error(msg)
+    }
 
     const
-    path = `${config.path}/${template}.hbs`,
-    body = await this.composeFile(path, vm.body)
+    path = `${this.dirname}/${template}.hbs`,
+    body = await this.composeFile(path, viewModel.body)
 
-    this.out.writeHead(vm.status || 200, vm.headers)
-    this.out.end(body)
+    viewModel.headers['Content-Length'] = Buffer.byteLength(body)
+
+    output.writeHead(viewModel.meta.status || 200, viewModel.headers)
+    output.end(body)
   }
 
   async composeFile(filename, context)
@@ -39,3 +43,5 @@ module.exports = class
     })
   }
 }
+
+module.exports = CoreHandlebars

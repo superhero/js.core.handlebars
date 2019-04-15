@@ -29,7 +29,7 @@ This is an addon module to the [superhero/core](https://github.com/superhero/js.
 
 ```
 App
-├── controller
+├── api
 │   └── foobar.js
 ├── view
 │   ├── foobar.hbs
@@ -57,32 +57,24 @@ App
 
 #### `config.js`
 
-See the section: [Bootstrap](#bootstrap) for more information.
-
 ```js
 module.exports =
 {
-  bootstrap:
+  handlebars:
   {
-    '@superhero/core.handlebars':
+    partials:
     {
-      partials:
-      {
-        layout  : 'view/layout'
-      }
+      layout  : 'view/layout'
     }
   },
   routes:
   [
     {
-      view      : 'handlebars',
+      url       : '/',
+      method    : 'get',
+      view      : 'view/handlebars',
       template  : 'view/foobar',
-      endpoint  : 'controller/foobar',
-      policy    :
-      {
-        method  : 'get',
-        path    : '/'
-      }
+      endpoint  : 'api/foobar'
     }
   ]
 }
@@ -92,36 +84,34 @@ module.exports =
 
 ```js
 const
-config  = require('./config'),
-Core    = require('@superhero/core'),
-core    = new Core(config)
+CoreFactory = require('@superhero/core/factory'),
+coreFactory = new CoreFactory,
+core        = coreFactory.create()
 
-core.bootstrap(config.bootstrap).then(() => core.server('http', config.routes).listen(80))
+core.add('api')
+core.add('http/server')
+
+core.load()
+
+core.locate('bootstrap').bootstrap().then(() =>
+core.locate('http/server').listen(process.env.HTTP_PORT))
 ```
 
-#### `controller/foobar.js`
+#### `api/foobar.js`
 
 ```js
-const Dispatcher = require('@superhero/core/controller/dispatcher')
+const Dispatcher = require('@superhero/core/http/server/dispatcher')
 
-module.exports = class extends Dispatcher
+class FoobarEndpoint extends Dispatcher
 {
   async dispatch()
   {
     // Building a view model that we can use to render the view
-    const vm =
-    {
-      body:
-      {
-        foo : 'bar'
-      }
-    }
-
-    // Return the view model to be passed through the dispatcher chain to
-    // finally be passed to the view
-    return vm
+    this.view.body.foo = 'bar'
   }
 }
+
+module.exports = FoobarEndpoint
 ```
 
 #### `view/layout.hbs`
@@ -155,19 +145,14 @@ module.exports = class extends Dispatcher
 {{/ layout }}
 ```
 
-## Bootstrap
-
-The bootstrap process is meant to run once, before anything else in the application.
-A few different settings can be set through this process, described below:
-
-### Bootstrap › Template View
+### Template View
 
 ```js
 module.exports =
 {
   bootstrap:
   {
-    template:
+    handlebars:
     {
       helpers:
       {
