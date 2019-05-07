@@ -18,7 +18,7 @@ class CoreHandlebarsLocator extends LocatorConstituent
     path          = this.locator.locate('path'),
     configuration = this.locator.locate('configuration'),
     options       = configuration.find('handlebars'),
-    handlebars    = buildHandlebars(path.main.dirname, options.helpers, options.partials)
+    handlebars    = buildHandlebars(path.main.dirname, this.locator, options)
 
     return new CoreHandlebars(path.main.dirname, handlebars)
   }
@@ -28,7 +28,7 @@ module.exports = CoreHandlebarsLocator
 
 let _handlebars
 
-function buildHandlebars(dirname, helpers, partials)
+function buildHandlebars(dirname, locator, options)
 {
   if(_handlebars)
     return _handlebars
@@ -41,12 +41,12 @@ function buildHandlebars(dirname, helpers, partials)
     throw new Error(msg)
   }
 
-  if(partials)
+  if(options.partials)
   {
-    for(const partial in partials)
+    for(const partial in options.partials)
     {
       const
-      template  = partials[partial],
+      template  = options.partials[partial],
       filename  = `${dirname}/${template}.hbs`,
       encoding  = 'utf-8',
       source    = fs.readFileSync(filename, encoding)
@@ -55,29 +55,29 @@ function buildHandlebars(dirname, helpers, partials)
     }
   }
 
-  if(helpers)
+  if(options.helpers)
   {
-    if(typeof helpers !== 'object')
+    if(typeof options.helpers !== 'object')
     {
       const msg = `Invalid format for "config.handlebars.helpers". `
-                + `Expected "object" or "Array", found:"${typeof helpers}"`
+                + `Expected "object" or "Array", found:"${typeof options.helpers}"`
       throw new TypeError(msg)
     }
 
-    for(const name in helpers)
+    for(const name in options.helpers)
     {
-      const filename = helpers[name]
+      const service = options.helpers[name]
 
       let helper
 
-      switch(typeof filename)
+      switch(typeof service)
       {
         case 'boolean':
         {
-          if(filename)
+          if(service)
           {
-            helper = require(`${__dirname}/helper/${name}`)
-            break
+            const msg = `boolean value "true" is not a valid option for a handlebars helper, absolute path is required.`
+            throw new TypeError(msg)
           }
           else
           {
@@ -87,14 +87,22 @@ function buildHandlebars(dirname, helpers, partials)
         }
         case 'string':
         {
-          helper = require(filename)
+          const helperFactory = locator.locate(service)
+
+          if(typeof helperFactory.create !== 'function')
+          {
+            const msg = `Invalid helper factory, contract not honered. Expected "create" function is undefined.`
+            throw new TypeError(msg)
+          }
+
+          helper = helperFactory.create()
           break
         }
         default:
         {
-          const msg = `Invalid filename. `
+          const msg = `Invalid service. `
                     + `Expected "string" or "boolean". `
-                    + `Found:"${typeof filename}"`
+                    + `Found:"${typeof service}"`
           throw new TypeError(msg)
         }
       }

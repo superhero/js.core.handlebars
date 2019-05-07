@@ -77,7 +77,7 @@ module.exports =
         {
           url       : '/',
           method    : 'get',
-          view      : 'view/handlebars',
+          view      : '@superhero/core.handlebars',
           template  : 'view/foobar',
           endpoint  : 'api/foobar'
         }
