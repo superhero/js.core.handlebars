@@ -164,23 +164,22 @@ module.exports =
     {
       helpers:
       {
-        // The library has a few defined core helpers that can be activated
-        // and used by through a truthful flag
-        'calculate'       : true,
-        'case'            : true,
-        'concat'          : true,
-        'dateformat'      : true,
-        'escDoubleQuote'  : true,
-        'escSingelQuote'  : true,
-        'if'              : true,
-        'jsonStringify'   : true,
-        'math'            : true,
-        'stripTags'       : true,
-        'switch'          : true,
-        'toFixed'         : true,
-        'toLowerCase'     : true,
-        'toUpperCase'     : true,
-        'unless'          : true,
+        // The library has a few defined core helpers that are activated by default, but can be deactivated with a falsy flag
+        // calculate
+        // case
+        // concat
+        // dateformat
+        // escDoubleQuote
+        // escSingelQuote
+        // if
+        // jsonStringify
+        // math
+        // stripTags
+        // switch
+        // toFixed
+        // toLowerCase
+        // toUpperCase
+        // unless
 
         // You can add a custom helper by specify it's name and the path to the
         // exported function
