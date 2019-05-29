@@ -25,8 +25,13 @@ module.exports =
 
     }
   },
+  bootstrap:
+  {
+    '@superhero/core.handlebars' : '@superhero/core.handlebars/bootstrap'
+  },
   locator:
   {
+    '@superhero/core.handlebars/bootstrap'                : __dirname + '/bootstrap',
     '@superhero/core.handlebars/helper/calculate'         : __dirname + '/helper/calculate',
     '@superhero/core.handlebars/helper/case'              : __dirname + '/helper/case',
     '@superhero/core.handlebars/helper/concat'            : __dirname + '/helper/concat',
