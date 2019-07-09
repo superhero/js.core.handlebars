@@ -12,8 +12,11 @@ class CoreHandlebarsHelperUnlessLocator extends LocatorConstituent
    */
   locate()
   {
-    const helperIf = this.locator.locate('@superhero/core.handlebars/helper/if')
-    return new CoreHandlebarsHelperUnless(helperIf)
+    const 
+    helperIf   = this.locator.locate('@superhero/core.handlebars/helper/if'),
+    helperIfFn = helperIf.create()
+    
+    return new CoreHandlebarsHelperUnless(helperIfFn)
   }
 }
 
