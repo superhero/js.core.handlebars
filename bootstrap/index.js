@@ -10,9 +10,9 @@ class CoreHandlebarsBootstrap
   bootstrap()
   {
     const
-    path          = this.locator.locate('path'),
+    path          = this.locator.locate('core/path'),
     handlebars    = this.locator.locate('@superhero/core.handlebars'),
-    configuration = this.locator.locate('configuration'),
+    configuration = this.locator.locate('core/configuration'),
     options       = configuration.find('handlebars')
 
     if(!path.main.dirname)

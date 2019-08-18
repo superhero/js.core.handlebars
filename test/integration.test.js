@@ -9,18 +9,18 @@ describe('integration tests', () =>
   before(async () =>
   {
     const
-    CoreFactory = require('@superhero/core/factory'),
+    CoreFactory = require('superhero/core/factory'),
     coreFactory = new CoreFactory
 
     core = coreFactory.create()
 
     core.add('@superhero/core.handlebars', __dirname + '/..')
-    core.add('@superhero/core', __dirname)
+    core.add('superhero', __dirname)
 
     core.load()
 
     // bootstrap and compose the html template
-    await core.locate('bootstrap').bootstrap()
+    await core.locate('core/bootstrap').bootstrap()
 
     const
     view      = core.locate('@superhero/core.handlebars'),

@@ -1,9 +1,9 @@
 const
 CoreHandlebarsHelperUnless  = require('.'),
-LocatorConstituent          = require('@superhero/core/locator/constituent')
+LocatorConstituent          = require('superhero/core/locator/constituent')
 
 /**
- * @extends {@superhero/core/locator/constituent}
+ * @extends {superhero/core/locator/constituent}
  */
 class CoreHandlebarsHelperUnlessLocator extends LocatorConstituent
 {
@@ -12,10 +12,10 @@ class CoreHandlebarsHelperUnlessLocator extends LocatorConstituent
    */
   locate()
   {
-    const 
+    const
     helperIf   = this.locator.locate('@superhero/core.handlebars/helper/if'),
     helperIfFn = helperIf.create()
-    
+
     return new CoreHandlebarsHelperUnless(helperIfFn)
   }
 }

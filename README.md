@@ -48,7 +48,7 @@ App
   "description": "An example meant to describe the libraries fundamentals",
   "license": "MIT",
   "dependencies": {
-    "@superhero/core": "*",
+    "superhero": "*",
     "@superhero/core.handlebars": "*"
   }
 }
@@ -91,7 +91,7 @@ module.exports =
 
 ```js
 const
-CoreFactory = require('@superhero/core/factory'),
+CoreFactory = require('superhero/core/factory'),
 coreFactory = new CoreFactory,
 core        = coreFactory.create()
 
@@ -108,7 +108,7 @@ core.locate('http/server').listen(process.env.HTTP_PORT))
 #### `api/foobar.js`
 
 ```js
-const Dispatcher = require('@superhero/core/http/server/dispatcher')
+const Dispatcher = require('superhero/core/http/server/dispatcher')
 
 class FoobarEndpoint extends Dispatcher
 {

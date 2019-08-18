@@ -1,10 +1,10 @@
 const
 CoreHandlebars      = require('.'),
 handlebars          = require('handlebars'),
-LocatorConstituent  = require('@superhero/core/locator/constituent')
+LocatorConstituent  = require('superhero/core/locator/constituent')
 
 /**
- * @extends {@superhero/core/locator/constituent}
+ * @extends {superhero/core/locator/constituent}
  */
 class CoreHandlebarsLocator extends LocatorConstituent
 {
@@ -13,7 +13,7 @@ class CoreHandlebarsLocator extends LocatorConstituent
    */
   locate()
   {
-    const path = this.locator.locate('path')
+    const path = this.locator.locate('core/path')
     return new CoreHandlebars(path.main.dirname, handlebars)
   }
 }

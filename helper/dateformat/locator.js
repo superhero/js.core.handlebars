@@ -1,10 +1,10 @@
 const
 CoreHandlebarsHelperDateformat  = require('.'),
 dateformat                      = require('dateformat'),
-LocatorConstituent              = require('@superhero/core/locator/constituent')
+LocatorConstituent              = require('superhero/core/locator/constituent')
 
 /**
- * @extends {@superhero/core/locator/constituent}
+ * @extends {superhero/core/locator/constituent}
  */
 class CoreHandlebarsHelperDateformatLocator extends LocatorConstituent
 {
