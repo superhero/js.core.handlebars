@@ -2,7 +2,7 @@ class CoreHandlebarsHelperJsonStringify
 {
   create()
   {
-    return (obj) => JSON.stringify(obj)
+    return (obj, indentation) => JSON.stringify(obj, null, indentation)
   }
 }
 

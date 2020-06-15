@@ -1,6 +1,6 @@
 {
   "name": "@superhero/core.handlebars",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "description": "Addon module to add a handlebars template view to the superhero/core module",
   "repository": "git@github.com:superhero/js.core.handlebars.git",
   "main": "index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@superhero/debug": "1.1.4",
-    "handlebars": "4.5.3",
+    "handlebars": "4.7.6",
     "dateformat": "3.0.2"
   },
   "devDependencies": {
