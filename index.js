@@ -13,7 +13,7 @@ class CoreHandlebars
 
   async write(output, viewModel, route)
   {
-    const template = viewModel.template || route.template
+    const template = viewModel.meta.template || viewModel.template || route.template
 
     if(!template)
     {
