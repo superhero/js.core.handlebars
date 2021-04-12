@@ -21,9 +21,7 @@ class CoreHandlebars
       throw new Error(msg)
     }
 
-    const
-    path = `${this.dirname}/${template}.hbs`,
-    body = await this.composeFile(path, viewModel.body)
+    const body = await this.composeFile(template, viewModel.body)
 
     viewModel.headers['Content-Length'] = Buffer.byteLength(body)
 
@@ -31,8 +29,9 @@ class CoreHandlebars
     output.end(body)
   }
 
-  async composeFile(filename, context)
+  async composeFile(template, context)
   {
+    const filename = `${this.dirname}/${template}.hbs`
     return await readFile(filename, 'utf-8').then((source) =>
     {
       const

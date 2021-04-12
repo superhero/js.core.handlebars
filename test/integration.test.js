@@ -15,7 +15,7 @@ describe('integration tests', () =>
     core = coreFactory.create()
 
     core.add('@superhero/core.handlebars', __dirname + '/..')
-    core.add('superhero', __dirname)
+    core.add('test', __dirname)
 
     core.load()
 
@@ -24,7 +24,7 @@ describe('integration tests', () =>
 
     const
     view      = core.locate('@superhero/core.handlebars'),
-    filename  = __dirname + '/template/template.hbs',
+    filename  = '/test/template/template',
     context   =
     {
       foo : 'foobar',
