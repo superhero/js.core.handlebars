@@ -156,13 +156,14 @@ module.exports = FoobarEndpoint
 {{/ layout }}
 ```
 
-### Template View
+### Config overview
 
 ```js
 module.exports =
 {
   handlebars:
   {
+    // The library has a few defined core helpers that are activated by default, but can be deactivated with a falsy flag
     helpers:
     {
       'calculate'       : '@superhero/core.handlebars/helper/calculate',
@@ -180,10 +181,16 @@ module.exports =
       'toLowerCase'     : '@superhero/core.handlebars/helper/to-lower-case',
       'toUpperCase'     : '@superhero/core.handlebars/helper/to-upper-case',
       'unless'          : '@superhero/core.handlebars/helper/unless'
+
+      // You can add a custom helper by specify it's name and the path to the service that returns a helper function through the method: "create"
+      // example:
+      // 'customHelper'    : 'path-to-helper'
     },
     partials:
     {
-      
+      // it's possible to register partials to be loaded and used through-out the application
+      // example:
+      // foo  : 'view/foobar'
     }
   }
 }
