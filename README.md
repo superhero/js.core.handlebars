@@ -28,7 +28,7 @@ This is an addon module to the [superhero/core](https://github.com/superhero/js.
 ### Example Application › File structure
 
 ```
-App
+src
 ├── api
 │   └── foobar.js
 ├── view
@@ -67,19 +67,23 @@ module.exports =
       layout  : 'view/layout'
     }
   },
-  http:
+  core:
   {
-    server:
+    http:
     {
-      routes:
+      server:
       {
-        'create-calculation':
+        routes:
         {
-          url       : '/',
-          method    : 'get',
-          view      : '@superhero/core.handlebars',
-          template  : 'view/foobar',
-          endpoint  : 'api/foobar'
+          'create-calculation':
+          {
+            url       : '/',
+            method    : 'get',
+            view      : '@superhero/core.handlebars',
+            input     : false,
+            template  : 'view/foobar',
+            endpoint  : 'api/foobar'
+          }
         }
       }
     }
@@ -97,12 +101,11 @@ core        = coreFactory.create()
 
 core.add('api')
 core.add('@superhero/core.handlebars')
-core.add('http/server')
 
 core.load()
 
 core.locate('bootstrap').bootstrap().then(() =>
-core.locate('http/server').listen(process.env.HTTP_PORT))
+core.locate('core/http/server').listen(80))
 ```
 
 #### `api/foobar.js`
@@ -158,42 +161,30 @@ module.exports = FoobarEndpoint
 ```js
 module.exports =
 {
-  bootstrap:
+  handlebars:
   {
-    handlebars:
+    helpers:
     {
-      helpers:
-      {
-        // The library has a few defined core helpers that are activated by default, but can be deactivated with a falsy flag
-        // calculate
-        // case
-        // concat
-        // dateformat
-        // escDoubleQuote
-        // escSingelQuote
-        // if
-        // jsonStringify
-        // math
-        // stripTags
-        // switch
-        // toFixed
-        // toLowerCase
-        // toUpperCase
-        // unless
-
-        // You can add a custom helper by specify it's name and the path to the
-        // exported function
-        'customHelper'    : 'path-to-helper'
-      },
-      partials:
-      {
-        // You can register partials to be loaded and used through-out the
-        // application, such as a layout, for instance...
-        name : 'path-to-partial'
-      }
+      'calculate'       : '@superhero/core.handlebars/helper/calculate',
+      'case'            : '@superhero/core.handlebars/helper/case',
+      'concat'          : '@superhero/core.handlebars/helper/concat',
+      'dateformat'      : '@superhero/core.handlebars/helper/dateformat',
+      'escDoubleQuote'  : '@superhero/core.handlebars/helper/esc-double-quote',
+      'escSingelQuote'  : '@superhero/core.handlebars/helper/esc-singel-quote',
+      'if'              : '@superhero/core.handlebars/helper/if',
+      'jsonStringify'   : '@superhero/core.handlebars/helper/json-stringify',
+      'math'            : '@superhero/core.handlebars/helper/math',
+      'stripTags'       : '@superhero/core.handlebars/helper/strip-tags',
+      'switch'          : '@superhero/core.handlebars/helper/switch',
+      'toFixed'         : '@superhero/core.handlebars/helper/to-fixed',
+      'toLowerCase'     : '@superhero/core.handlebars/helper/to-lower-case',
+      'toUpperCase'     : '@superhero/core.handlebars/helper/to-upper-case',
+      'unless'          : '@superhero/core.handlebars/helper/unless'
     },
-    // ...
-  },
-  // ...
+    partials:
+    {
+      
+    }
+  }
 }
 ```
