@@ -1,7 +1,7 @@
 const
-fs        = require('fs'),
-util      = require('util'),
-readFile  = util.promisify(fs.readFile)
+  fs        = require('fs'),
+  util      = require('util'),
+  readFile  = util.promisify(fs.readFile)
 
 class CoreHandlebars
 {
@@ -9,6 +9,7 @@ class CoreHandlebars
   {
     this.dirname    = dirname
     this.handlebars = handlebars
+    this.templates  = {}
   }
 
   async write(output, viewModel, route)
@@ -17,8 +18,10 @@ class CoreHandlebars
 
     if(!template)
     {
-      const msg = 'view can not be rendered, no template defined'
-      throw new Error(msg)
+      const error = new Error('view can not be rendered, no template defined')
+      error.chain = { template, viewModel, route }
+      error.code  = 'E_CORE_HANDLEBARS_NO_ROUTE'
+      throw error
     }
 
     const body = await this.composeFile(template, viewModel.body)
@@ -29,17 +32,28 @@ class CoreHandlebars
     output.end(body)
   }
 
+  async lazyloadTemplate(template)
+  {
+    if(template in this.templates)
+    {
+      return this.templates[template]
+    }
+
+    const 
+      filename  = `${this.dirname}/${template}.hbs`,
+      source    = await readFile(filename, 'utf-8'),
+      compiled  = this.handlebars.compile(source)
+
+    return this.templates[template] = compiled
+  }
+
   async composeFile(template, context)
   {
-    const filename = `${this.dirname}/${template}.hbs`
-    return await readFile(filename, 'utf-8').then((source) =>
-    {
-      const
-      template = this.handlebars.compile(source),
-      composed = template(context)
+    const
+      handlebarsTemplate  = await this.lazyloadTemplate(template),
+      result              = handlebarsTemplate(context)
 
-      return composed
-    })
+    return result
   }
 }
 

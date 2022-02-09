@@ -1,7 +1,7 @@
 const
-CoreHandlebars      = require('.'),
-handlebars          = require('handlebars'),
-LocatorConstituent  = require('superhero/core/locator/constituent')
+  CoreHandlebars      = require('.'),
+  handlebars          = require('handlebars'),
+  LocatorConstituent  = require('superhero/core/locator/constituent')
 
 /**
  * @extends {superhero/core/locator/constituent}
