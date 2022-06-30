@@ -175,11 +175,17 @@ module.exports =
       'if'              : '@superhero/core.handlebars/helper/if',
       'jsonStringify'   : '@superhero/core.handlebars/helper/json-stringify',
       'math'            : '@superhero/core.handlebars/helper/math',
+      'padEnd'          : '@superhero/core.handlebars/helper/pad-end',
+      'padStart'        : '@superhero/core.handlebars/helper/pad-start',
+      'replace'         : '@superhero/core.handlebars/helper/replace',
+      'slice'           : '@superhero/core.handlebars/helper/slice',
       'stripTags'       : '@superhero/core.handlebars/helper/strip-tags',
+      'substr'          : '@superhero/core.handlebars/helper/substr',
       'switch'          : '@superhero/core.handlebars/helper/switch',
       'toFixed'         : '@superhero/core.handlebars/helper/to-fixed',
       'toLowerCase'     : '@superhero/core.handlebars/helper/to-lower-case',
       'toUpperCase'     : '@superhero/core.handlebars/helper/to-upper-case',
+      'trim'            : '@superhero/core.handlebars/helper/trim',
       'unless'          : '@superhero/core.handlebars/helper/unless'
 
       // You can add a custom helper by specify it's name and the path to the service that returns a helper function through the method: "create"
