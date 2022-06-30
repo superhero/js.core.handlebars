@@ -24,6 +24,7 @@ module.exports =
       'toFixed'         : '@superhero/core.handlebars/helper/to-fixed',
       'toLowerCase'     : '@superhero/core.handlebars/helper/to-lower-case',
       'toUpperCase'     : '@superhero/core.handlebars/helper/to-upper-case',
+      'trim'            : '@superhero/core.handlebars/helper/trim',
       'unless'          : '@superhero/core.handlebars/helper/unless'
     },
     partials:
@@ -60,6 +61,7 @@ module.exports =
       '@superhero/core.handlebars/helper/to-fixed'          : __dirname + '/helper/to-fixed',
       '@superhero/core.handlebars/helper/to-lower-case'     : __dirname + '/helper/to-lower-case',
       '@superhero/core.handlebars/helper/to-upper-case'     : __dirname + '/helper/to-upper-case',
+      '@superhero/core.handlebars/helper/trim'              : __dirname + '/helper/trim',
       '@superhero/core.handlebars/helper/unless'            : __dirname + '/helper/unless',
       '@superhero/core.handlebars'                          : __dirname
     }
