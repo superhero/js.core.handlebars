@@ -4,7 +4,7 @@ class CoreHandlebarsHelperTrim
   {
     return (s) =>
     {
-      return s.trim()
+      return `${s}`.trim()
     }
   }
 }

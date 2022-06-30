@@ -4,7 +4,7 @@ class CoreHandlebarsHelperRepeat
   {
     return (s, count) =>
     {
-      return s.repeat(count)
+      return `${s}`.repeat(count)
     }
   }
 }

@@ -4,7 +4,7 @@ class CoreHandlebarsHelperSlice
   {
     return (s, start, end) =>
     {
-      return s.slice(start, end)
+      return `${s}`.slice(start, end)
     }
   }
 }

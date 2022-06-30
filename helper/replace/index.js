@@ -4,7 +4,7 @@ class CoreHandlebarsHelperReplace
   {
     return (s, substr, replacer) =>
     {
-      return s.replaceAll(substr, replacer)
+      return `${s}`.replaceAll(substr, replacer)
     }
   }
 }

@@ -4,7 +4,7 @@ class CoreHandlebarsHelperPadStart
   {
     return (s, targetLength, padString) =>
     {
-      return s.padStart(targetLength, padString)
+      return `${s}`.padStart(targetLength, padString)
     }
   }
 }

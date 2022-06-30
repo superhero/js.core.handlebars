@@ -4,7 +4,7 @@ class CoreHandlebarsHelperSubstr
   {
     return (s, start, length) =>
     {
-      return s.substr(start, length)
+      return `${s}`.substr(start, length)
     }
   }
 }
