@@ -42,7 +42,7 @@ class CoreHandlebars
     const 
       filename  = template[0] === '/' ? `${template}.hbs` : `${this.dirname}/${template}.hbs`,
       source    = await readFile(filename, 'utf-8'),
-      compiled  = this.handlebars.compile(source)
+      compiled  = this.handlebars.compile(source, { preventIndent:true })
 
     return this.templates[template] = compiled
   }
