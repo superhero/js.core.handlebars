@@ -10,10 +10,10 @@ class CoreHandlebarsBootstrap
   bootstrap()
   {
     const
-    path          = this.locator.locate('core/path'),
-    handlebars    = this.locator.locate('@superhero/core.handlebars'),
-    configuration = this.locator.locate('core/configuration'),
-    options       = configuration.find('handlebars')
+      path          = this.locator.locate('core/path'),
+      handlebars    = this.locator.locate('@superhero/core.handlebars'),
+      configuration = this.locator.locate('core/configuration'),
+      options       = configuration.find('handlebars')
 
     if(!path.main.dirname)
     {
@@ -26,10 +26,43 @@ class CoreHandlebarsBootstrap
       for(const partial in options.partials)
       {
         const
-        template  = options.partials[partial],
-        filename  = `${path.main.dirname}/${template}.hbs`,
-        encoding  = 'utf-8',
-        source    = fs.readFileSync(filename, encoding)
+          template  = options.partials[partial],
+          encoding  = 'utf-8'
+
+        let source
+
+        try
+        {
+          source = fs.readFileSync(`${path.main.dirname}/${template}.hbs`, encoding)
+        }
+        catch(error)
+        {
+          try
+          {
+            source = fs.readFileSync(`${path.main.dirname}/${template}`, encoding)
+          }
+          catch(error)
+          {
+            try
+            {
+              source = fs.readFileSync(`${template}.hbs`, encoding)
+            }
+            catch(error)
+            {
+              try
+              {
+                source = fs.readFileSync(template, encoding)
+              }
+              catch(previousError)
+              {
+                const error = new Error(`failed to read partial template file: "${partial}"`)
+                error.chain = { previousError, partial, paths:[`${path.main.dirname}/${template}.hbs`, `${path.main.dirname}/${template}`, `${template}.hbs`, template] }
+                error.code  = 'E_CORE_HANDLEBARS_PARTIAL_NOT_FOUND'
+                throw error
+              }
+            }
+          }
+        }
 
         handlebars.handlebars.registerPartial(partial, source)
       }

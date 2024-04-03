@@ -1,6 +1,6 @@
 {
   "name": "@superhero/core.handlebars",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "Addon module to add a handlebars template view to the superhero/core module",
   "repository": "git@github.com:superhero/js.core.handlebars.git",
   "main": "index.js",

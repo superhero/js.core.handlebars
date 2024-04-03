@@ -24,7 +24,7 @@ describe('integration tests', () =>
 
     const
     view      = core.locate('@superhero/core.handlebars'),
-    filename  = '/test/template/template',
+    filename  = __dirname + '/template/template',
     context   =
     {
       foo : 'foobar',
