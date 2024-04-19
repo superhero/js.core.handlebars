@@ -5,16 +5,19 @@ const
 
 class CoreHandlebars
 {
-  constructor(dirname, handlebars)
+  constructor(dirname, handlebars, basepath)
   {
     this.dirname    = dirname
     this.handlebars = handlebars
+    this.basepath   = basepath || ''
     this.templates  = {}
   }
 
   async write(output, viewModel, route)
   {
-    const template = viewModel.meta.template || viewModel.template || route.template
+    const 
+      template = viewModel.meta.template || viewModel.template || route.template,
+      basepath = viewModel.meta.basepath || viewModel.basepath || route.basepath || this.basepath
 
     if(!template)
     {
@@ -24,7 +27,7 @@ class CoreHandlebars
       throw error
     }
 
-    const body = await this.composeFile(template, viewModel.body)
+    const body = await this.composeFile(basepath + template, viewModel.body)
 
     viewModel.headers['Content-Length'] = Buffer.byteLength(body)
 

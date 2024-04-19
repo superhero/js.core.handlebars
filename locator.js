@@ -13,8 +13,12 @@ class CoreHandlebarsLocator extends LocatorConstituent
    */
   locate()
   {
-    const path = this.locator.locate('core/path')
-    return new CoreHandlebars(path.main.dirname, handlebars)
+    const 
+      path          = this.locator.locate('core/path'),
+      configuration = this.locator.locate('core/configuration'),
+      basepath      = configuration.find('handlebars/basepath')
+
+    return new CoreHandlebars(path.main.dirname, handlebars, basepath)
   }
 }
 

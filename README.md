@@ -163,6 +163,8 @@ module.exports =
 {
   handlebars:
   {
+    // optional base path parameter that can be utelised to set the prefixed directory path for all view templates
+    basepath: '',
     // The library has a few defined core helpers that are activated by default, but can be deactivated with a falsy flag
     helpers:
     {
