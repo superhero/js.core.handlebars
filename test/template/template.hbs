@@ -23,5 +23,13 @@
     {{# if i '||' foo }} || {{/ if }}
     ---
     {{# if foo 'typeof' 'string' }} typeof {{/ if }}
+    ---
+    {{# if i '<' 10 '&&' foo '==' 'foobar' }} multiple operators AND {{/ if }}
+    ---
+    {{# if i '>' 10 '||' foo '==' 'foobar' }} multiple operators OR  {{/ if }}
+    ---
+    {{# if i '<' 10 '&&' foo '==' 'foobar' '&&' i '==' 5 }} multiple x2 operators AND {{/ if }}
+    ---
+    {{# if i '>' 10 '||' foo '!=' 'foobar' '||' i '==' 5 }} multiple x2 operators OR  {{/ if }}
   </p>
 {{/ layout }}

@@ -31,7 +31,10 @@ describe('integration tests', () =>
       i   : 5
     }
 
+    core.locate('core/console').color('cyan').log('')
+    core.locate('core/console').color('cyan').log('- composing file for integration tests:', filename)
     html = await view.composeFile(filename, context)
+    core.locate('core/console').color('green').log('✔ composed file')
   })
 
   describe('static get handlebars', () =>
@@ -80,5 +83,17 @@ describe('integration tests', () =>
 
     it('if helper "typeof"',
     () => expect(html.includes('typeof')).to.be.equal(true))
+
+    it('if helper "multiple operators AND"',
+    () => expect(html.includes('multiple operators AND')).to.be.equal(true))
+
+    it('if helper "multiple operators OR"',
+    () => expect(html.includes('multiple operators OR')).to.be.equal(true))
+
+    it('if helper "multiple x2 operators AND"',
+    () => expect(html.includes('multiple x2 operators AND')).to.be.equal(true))
+
+    it('if helper "multiple x2 operators OR"',
+    () => expect(html.includes('multiple x2 operators OR')).to.be.equal(true))
   })
 })
